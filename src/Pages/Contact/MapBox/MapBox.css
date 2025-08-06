@@ -1,0 +1,23 @@
+/* Container for the mapbox section */
+.mapbox {
+  position: relative;
+  height: 400px;
+  width: 100%;
+  border-radius: 16px;
+  margin-bottom: 30px;
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+}
+
+/* Figure element inside mapbox */
+.mapbox figure {
+  height: 100%;
+}
+
+/* iFrame styling inside mapbox */
+.mapbox iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  filter: grayscale(1) invert(1);
+}

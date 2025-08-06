@@ -1,0 +1,75 @@
+.main-content {
+  position: relative;
+  margin-left: 310px;
+  min-height: 640px;
+  width: 100%;
+  background-color: var(--card-background);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  box-shadow: var(--shadow-1);
+  padding: 30px;
+  transition: 0.5s ease-in-out;
+  animation: fade 0.5s ease backwards;
+}
+
+/* Article Title Styles */
+.main-content .article-title {
+  font-size: 32px;
+  position: relative;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+.article-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 5px;
+  background: var(--primary-gradient);
+  border-radius: 3px;
+}
+
+/* Fade Animation */
+@keyframes fade {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 1024px) {
+  .main-content {
+    margin-left: 0;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .main-content {
+    position: static;
+  }
+}
+
+@media only screen and (max-width: 580px) {
+  .main-content {
+    padding: 15px;
+  }
+
+  .main-content .article-title {
+    font-size: 20px;
+    padding-bottom: 7px;
+    margin-bottom: 30px;
+  }
+
+  .article-title::after {
+    width: 30px;
+    height: 3px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .layout {
+    margin: 1rem 0.75rem;
+  }
+}

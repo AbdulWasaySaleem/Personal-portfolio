@@ -1,0 +1,31 @@
+/* Container for the services section */
+.service {
+  margin-bottom: 35px;
+}
+
+/* Heading within the services section */
+.service h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-transform: capitalize;
+}
+
+/* Grid layout for the service items */
+.service-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 1024px) {
+  .service-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media only screen and (max-width: 580px) {
+  .service h3 {
+    font-size: 18px;
+  }
+}

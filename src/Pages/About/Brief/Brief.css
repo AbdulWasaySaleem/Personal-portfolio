@@ -1,0 +1,18 @@
+.about-text {
+  color: rgb(214, 214, 214);
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.about-text p {
+  margin-bottom: 15px;
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 580px) {
+  .about-text {
+    font-size: 14px;
+  }
+}

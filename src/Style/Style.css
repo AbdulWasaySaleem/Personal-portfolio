@@ -1,0 +1,87 @@
+/* Importing Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  /* Colors */
+  --background-color: rgb(18, 18, 18); 
+  --card-background: rgb(30, 30, 31); 
+  --item-background: rgb(40, 40, 41); 
+  --accent-color: #aefd7c; 
+  --light-gray: rgb(214, 214, 214);
+  --text-color: rgb(250, 250, 250);
+  --border-color: rgb(51, 51, 51); 
+  --font-accent: "Poppins", sans-serif; 
+
+  /* Gradients */
+  --primary-gradient: linear-gradient(to right, #aefd7c, #9dff61);
+
+  /* Shadows */
+  --shadow-1: -4px 8px 24px rgba(0, 0, 0, 0.25);
+  --shadow-2: 0 16px 30px rgba(0, 0, 0, 0.125);
+}
+
+/* Global Styles */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  color: var(--background-color);
+  background: var(--accent-color);
+}
+
+body {
+  color: var(--text-color);
+  background-color: var(--background-color);
+  font-family: var(--font-accent);
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-color); 
+}
+ 
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: var(--card-background);
+  border: 1px solid var(--border-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--item-background); 
+}
+
+
+/* Form Elements */
+input,
+textarea {
+  display: block;
+  width: 100%;
+  background: none;
+  font: inherit;
+}
+
+button {
+  font: inherit;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+/* General Block Elements */
+img,
+ion-icon,
+a,
+button,
+time,
+span {
+  display: block;
+}

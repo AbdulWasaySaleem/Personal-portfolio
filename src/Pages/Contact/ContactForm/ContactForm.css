@@ -1,0 +1,150 @@
+/* Container for the contact form section */
+.contact-form {
+  margin-bottom: 10px;
+}
+
+/* Title styling for the contact form */
+.form-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-transform: capitalize;
+}
+
+/* Input wrapper styling with grid layout */
+.input-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  margin-bottom: 25px;
+}
+
+/* General styling for form inputs (text and email) */
+.form-input {
+  color: var(--text-color);
+  font-size: 15px;
+  font-weight: 400;
+  padding: 13px 20px;
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  outline: none;
+}
+
+/* Placeholder styling for form inputs */
+.form-input::placeholder {
+  font-weight: 500;
+}
+
+/* Focus state styling for form inputs */
+.form-input:focus {
+  border-color: var(--accent-color);
+}
+
+/* Styling for textarea input */
+textarea.form-input {
+  min-height: 100px;
+  height: 120px;
+  resize: vertical;
+  margin-bottom: 25px;
+}
+
+/* Invalid state styling for form inputs */
+.form-input:focus:invalid {
+  border-color: rgb(184, 76, 76);
+}
+
+/* Button styling */
+.form-btn {
+  border: none;
+  position: relative;
+  width: max-content;
+  margin-left: auto;
+  background: linear-gradient(
+    to bottom right,
+    hsl(0, 0%, 25%) 0%,
+    hsla(0, 0%, 25%, 0) 50%
+  );
+  color: var(--accent-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 20px;
+  border-radius: 14px;
+  font-size: 16px;
+  text-transform: capitalize;
+  box-shadow: 0 16px 40px hsla(0, 0%, 0%, 0.25);
+  z-index: 1;
+  transition: var(--transition-1);
+}
+
+/* Button pseudo-element styling */
+.form-btn::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: linear-gradient(
+      to bottom right,
+      hsla(240, 1%, 18%, 0.251) 0%,
+      hsla(240, 2%, 11%, 0) 100%
+    ),
+    hsl(240, 2%, 13%);
+  border-radius: inherit;
+  z-index: -1;
+  transition: var(--transition-1);
+}
+
+/* Button hover styling */
+.form-btn:hover {
+  cursor: pointer;
+  background: linear-gradient(
+    to bottom right,
+    rgb(186, 255, 107) 0%,
+    rgba(181, 255, 97, 0) 50%
+  );
+}
+
+/* Button hover pseudo-element styling */
+.form-btn:hover::before {
+  background: linear-gradient(
+      135deg,
+      rgba(186, 255, 107, 0.251) 0%,
+      rgba(179, 255, 92, 0) 59.86%
+    ),
+    rgb(32, 32, 34);
+}
+
+/* Disabled button styling */
+.form-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Disabled button hover styling */
+.form-btn:disabled:hover {
+  background: linear-gradient(
+    to bottom right,
+    rgb(63, 63, 64) 3%,
+    rgb(48, 48, 48) 97%
+  );
+}
+
+/* Disabled button hover pseudo-element styling */
+.form-btn:disabled:hover::before {
+  background: linear-gradient(
+      to bottom right,
+      rgba(45, 45, 46, 0.251) 0%,
+      rgba(27, 27, 29, 0) 100%
+    ),
+    rgb(32, 32, 34);
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 580px) {
+  .form-title {
+    font-size: 18px;
+  }
+
+  .input-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
