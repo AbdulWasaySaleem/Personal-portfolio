@@ -15,6 +15,14 @@ import swiftBuy04 from "../assets/swiftBuy/SwiftBuy04.PNG";
 import swiftBuy05 from "../assets/swiftBuy/SwiftBuy05.PNG";
 import swiftBuy06 from "../assets/swiftBuy/SwiftBuy06.PNG";
 
+//Agile Project Management Tool images
+import agileDev01 from "../assets/agileDev/AgileDev01.PNG";
+import agileDev02 from "../assets/agileDev/AgileDev02.PNG";
+import agileDev03 from "../assets/agileDev/AgileDev03.PNG";
+import agileDev04 from "../assets/agileDev/AgileDev04.PNG";
+import agileDev05 from "../assets/agileDev/AgileDev05.PNG";
+import agileDev06 from "../assets/agileDev/AgileDev06.PNG";
+
 export const projects = [
   {
     id: 1,
@@ -74,6 +82,24 @@ export const projects = [
       "Payment Integration",
       "Admin Dashboard",
     ],
-    link: "https://swiftbuy.vercel.app",
+    link: "https://swiftbuyyy.vercel.app",
   },
+  {
+    id: 5,
+    title: "Agile Project Management Tool",
+    techStack: ["Next.js", "Node.js", "MongoDB", "Tailwind", "Socket.io", "Cloudinary"],
+    category: "Project Management Tool (Practice Project)",
+    description:
+      "An Agile Project Management Tool designed to streamline project workflows. Features include task boards, sprint planning, user stories, and team collaboration tools, all aimed at enhancing productivity and project tracking.",
+    imgSrc: [
+      agileDev01,
+      agileDev02,
+      agileDev03,
+      agileDev04,
+      agileDev05,
+      agileDev06,
+    ],
+    myRole: ["Full Stack Development", "UI/UX Design", "API Integration"],
+    link: "https://agiledev.vercel.app",
+  }
 ];

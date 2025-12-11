@@ -15,4 +15,18 @@ export const services = [
     title: "Web development",
     description: "High-quality development of sites at the professional level.",
   },
+  {
+    icon: DesignIcon,
+    alt: "API development icon",
+    title: "API development",
+    description:
+      "High-quality development of APIs at the professional level.",
+  },
+  {
+    icon: DevIcon,
+    alt: "Database development icon",
+    title: "Database development",
+    description:
+      "High-quality development of databases at the professional level.",
+  },
 ];

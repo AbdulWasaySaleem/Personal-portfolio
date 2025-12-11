@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import profilePicture from "../../assets/profile-Pic.jpg";
+import cvFile from "../../assets/abdulWasay(CV).pdf"; // ⬅️ NEW
 import {
   faEnvelope,
   faPhone,
@@ -20,12 +21,12 @@ import "./Sidebar.css";
 const Sidebar = () => {
   const [isActive, setIsActive] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 480);
+  const sidebarRef = useRef(null);
 
   const toggleSidebar = () => {
     setIsActive(!isActive);
   };
 
-  //Checking if the width of DOM is less than 480
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 480);
@@ -35,8 +36,34 @@ const Sidebar = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  // Close sidebar when clicking outside (mobile/tablet)
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (
+        isActive &&
+        sidebarRef.current &&
+        !sidebarRef.current.contains(e.target)
+      ) {
+        setIsActive(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [isActive]);
+
+  // Close on Escape
+  useEffect(() => {
+    const handleKey = (e) => {
+      if (e.key === "Escape" && isActive) setIsActive(false);
+    };
+    document.addEventListener("keydown", handleKey);
+    return () => document.removeEventListener("keydown", handleKey);
+  }, [isActive]);
+
   return (
     <aside
+      ref={sidebarRef}
       className={`sidebar ${isActive ? "active" : ""}`}
       aria-label="User Information Sidebar"
     >
@@ -47,7 +74,7 @@ const Sidebar = () => {
         aria-expanded={isActive}
       >
         {isMobile ? (
-          <FontAwesomeIcon icon={isActive ? faChevronUp : faChevronDown} />
+          <span>{isActive ? "Close" : "Open"}</span>
         ) : (
           <span>{isActive ? "Hide Contacts" : "Show Contacts"}</span>
         )}
@@ -66,6 +93,11 @@ const Sidebar = () => {
             Abdul Wasay
           </h1>
           <p className="title">Full Stack Developer</p>
+
+          {/* ⬅️ NEW: Download CV Button */}
+          <a href={cvFile} download className="download-cv-btn">
+            Download CV
+          </a>
         </div>
       </section>
 
@@ -81,7 +113,7 @@ const Sidebar = () => {
         <InfoItem
           icon={faPhone}
           label="Phone"
-          content="+92 3112266291"
+          content="+92 311 2266291"
           href="tel:+923112266291"
         />
         <InfoItem
@@ -98,6 +130,7 @@ const Sidebar = () => {
             className="social-link"
             target="_blank"
             aria-label="LinkedIn profile"
+            rel="noopener noreferrer"
           >
             <FontAwesomeIcon icon={faLinkedin} />
           </a>
@@ -108,6 +141,7 @@ const Sidebar = () => {
             className="social-link"
             target="_blank"
             aria-label="GitHub profile"
+            rel="noopener noreferrer"
           >
             <FontAwesomeIcon icon={faGithub} />
           </a>
@@ -118,6 +152,7 @@ const Sidebar = () => {
             className="social-link"
             target="_blank"
             aria-label="Facebook profile"
+            rel="noopener noreferrer"
           >
             <FontAwesomeIcon icon={faFacebook} />
           </a>
@@ -128,6 +163,7 @@ const Sidebar = () => {
             className="social-link"
             target="_blank"
             aria-label="Instagram profile"
+            rel="noopener noreferrer"
           >
             <FontAwesomeIcon icon={faInstagram} />
           </a>

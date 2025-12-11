@@ -6,7 +6,7 @@
   align-items: center;
   padding: 60px 30px 30px 30px;
   width: 300px;
-  height: 640px;
+  height: 725px;
   background-color: var(--card-background);
   border: 1px solid var(--border-color);
   border-radius: 20px;
@@ -112,6 +112,26 @@
   color: var(--text-color);
 }
 
+.download-cv-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 18px;
+  background-color: var(--item-background);
+  color: var(--accent-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 400;
+  text-decoration: none;
+  transition: 0.25s ease;
+  box-shadow: var(--shadow-2);
+}
+
+.download-cv-btn:hover {
+  background-color: var(--accent-color);
+  color: var(--text-color);
+}
+
 /* Responsive Styles */
 @media only screen and (max-width: 1024px) {
   .sidebar {
@@ -131,6 +151,14 @@
 
   .sidebar-info {
     flex-direction: row;
+  }
+
+  /* Make info-content stack vertically on tablet/mobile */
+  .sidebar-info .info-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
   }
 
   .sidebar-info .info-content .title {
@@ -193,7 +221,15 @@
   }
 
   .sidebar-info .info-content .title {
-    font-size: 11px;
+    font-size: 10px;
+    padding: 6px 10px;
     font-weight: 400;
+  }
+
+  /* Mobile version button style */
+  .download-cv-btn {
+    font-size: 11px;
+    padding: 6px 14px;
+    margin-top: 2px;
   }
 }
