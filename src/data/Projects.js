@@ -100,6 +100,6 @@ export const projects = [
       agileDev06,
     ],
     myRole: ["Full Stack Development", "UI/UX Design", "API Integration"],
-    link: "https://agiledev.vercel.app",
+    link: "https://agile-development-management-tool.vercel.app/login",
   }
 ];
